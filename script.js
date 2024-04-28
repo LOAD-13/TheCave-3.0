@@ -46,6 +46,7 @@ if(currentItem3 >= boxes.length){
 }                
 }
 
+
 const prevBtn = document.querySelector('.btn-prev');
     const nextBtn = document.querySelector('.btn-next');
     const images = document.querySelectorAll('.imagen-fondo');
@@ -66,6 +67,25 @@ const prevBtn = document.querySelector('.btn-prev');
     // Agregar event listener para avanzar y retroceder
     nextBtn.addEventListener('click', showNextImage);
     prevBtn.addEventListener('click', showPrevImage);
+
+    // Array con los nombres de los archivos HTML disponibles
+var htmlFiles = [ 'endgame.html', 'infinity.html','venom.html','venom 2 carnage.html','Spidey NowayHome.html','mad max.html','durodematar.html','duro de matar good day.html'];
+
+// Función para redirigir a un HTML aleatorio del conjunto definido
+function redirectToRandomHTML() {
+    // Genera un número aleatorio entre 0 y la longitud del array de archivos HTML
+    var randomIndex = Math.floor(Math.random() * htmlFiles.length);
+    // Obtiene el nombre del archivo HTML aleatorio
+    var randomHTML = htmlFiles[randomIndex];
+    // Redirige al usuario al HTML seleccionado aleatoriamente
+    window.location.href = randomHTML;
+}
+
+// Asigna el evento click al botón "Ver ahora"
+document.getElementById('play-video-1').addEventListener('click', redirectToRandomHTML);
+
+
+    
 
 
 
